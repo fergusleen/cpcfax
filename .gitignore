@@ -1,0 +1,11 @@
+.DS_Store
+__pycache__/
+*.pyc
+.vscode
+build/
+*.bin
+*.BIN
+*.dsk
+*.DSK
+*.rom
+*.ROM
