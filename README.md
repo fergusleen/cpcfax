@@ -8,7 +8,7 @@ This project connects a CPC to telnet-style Viewdata services over wifi on the M
 - Profile presets (including `amshole` and `telstar`)
 - Disk image output for CPCemu
 
-## Quick Start (No Hex Wrench Required)
+## Building
 
 ```bash
 bash tools/build.sh
