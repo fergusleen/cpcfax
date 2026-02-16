@@ -592,12 +592,13 @@ drain_rx_pending:
             
 
 exit_close:
-            
-            call    disp_error
+            push    af
             ld      hl,cmdclose
             call    sendcmd
+            pop     af
+            call    disp_error
+            ld      sp, $BFF0
             jp      loop_ip
-            ret
             
             ; recv tcp data
             ; in

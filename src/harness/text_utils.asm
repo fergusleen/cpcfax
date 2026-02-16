@@ -38,7 +38,6 @@ disp_error:
 not_rc3:    cp      0xFC
             jr      nz,notuser
             ld      hl,msguserabort
-            jp      start
             jp      disptextz
 
 notuser:
