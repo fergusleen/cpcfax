@@ -29,7 +29,7 @@ ui_hint:        db  "Press ENTER after editing host:port",0
 ui_footer:      db  "kolleykibber - 2026",0
 
 preset_amshole:
-                db  "52.215.38.123:6512",0
+                db  "178.104.92.140:6512",0
 preset_telstar:
                 db  "glasstty.com:6502",0
 preset_tetrachloromethane:
