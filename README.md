@@ -2,7 +2,7 @@
 
 Z80 Viewdata client for Amstrad CPC + M4 Board.
 
-This project connects a CPC to telnet-style Viewdata services over wifi on the M4 board, with a UI and renderer designed for a classic CPC experience.
+This project connects an Amstrad CPC to telnet-style Viewdata services over wifi using the M4 board, with a UI and renderer designed for a classic CPC experience.
 
 - Optimised Viewdata/teletext style rendering
 - Profile presets (including `amshole` and `telstar`)
@@ -57,3 +57,23 @@ Pick a profile, enter or accept a host, and connect.
 - `tools/build.sh` assemble raw binary
 - `tools/make_dsk.sh` wrap binary + build `.dsk`
 - `tools/add_amsdos_header.py` add AMSDOS header
+
+## Screenshots
+
+Below are the current project screenshots from `images/`:
+
+- ![Boot screen](images/boot-screen.png)
+- ![Profile selection](images/profile-select.png)
+- ![Connected screen](images/connected-screen.png)
+- ![Render mode](images/render-mode.png)
+- ![Settings screen](images/settings.png)
+- ![Slow page example](images/slow-page.png)
+- ![Mosaic mode](images/mosaic-mode.png)
+- ![Final screen](images/final-screen.png)
+
+## License
+
+Copyright (C) 2026 Fergus Leen.
+
+This project is licensed under the GNU General Public License v3.0.
+See `LICENSE` for the full text.
