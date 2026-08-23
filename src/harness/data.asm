@@ -6,6 +6,7 @@ msgverfail:     db  ", you need v1.1.0 or higher.",10,13,0
 msgok:          db  ", OK.",10,13,0
 msgresolve:     db  10,13, "Resolving: ",0
 msgfail:        db  ", failed!", 10, 13, 0
+msgtimeout:     db  10,13,"Connection timed out.",10,13,0
 msguserabort:   db  10,13,"User aborted (ESC)", 10, 13,0
 msg_profile_prompt:
                 db  "Select profile [1-4]: ",0
@@ -29,7 +30,7 @@ ui_hint:        db  "Press ENTER after editing host:port",0
 ui_footer:      db  "kolleykibber - 2026",0
 
 preset_amshole:
-                db  "52.215.38.123:6512",0
+                db  "178.104.92.140:6512",0
 preset_telstar:
                 db  "glasstty.com:6502",0
 preset_tetrachloromethane:

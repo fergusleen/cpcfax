@@ -44,6 +44,7 @@ CMD_WINDOW_SIZE equ 31
 TXQ_SIZE        equ 32
 TXQ_MASK        equ (TXQ_SIZE-1)
 RX_RECV_CHUNK   equ 32
+NET_TIMEOUT_FRAMES equ 500       ; approximately 10 seconds at 50 Hz
 SND_TICK_MASK   equ 0x00
 SND_KEY_PEAK    equ 4
 SND_NOISE_PER   equ 0x03

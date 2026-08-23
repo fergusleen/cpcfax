@@ -16,9 +16,19 @@ dnslookup:  ld      hl,(0xFF02) ; get response buffer address
             ret
             
 wait_lookup:
+            ld      bc,NET_TIMEOUT_FRAMES
+.wait_lookup_poll:
+            push    bc
+            call    mc_wait_flyback
+            pop     bc
             ld  a,(ix+0)
             cp  5           ; ip lookup in progress
-            jr  z, wait_lookup
+            ret nz
+            dec     bc
+            ld      a,b
+            or      c
+            jr      nz,.wait_lookup_poll
+            ld      a,1
             ret
             
             
@@ -68,10 +78,22 @@ telnet_session:
             ld      a,(iy+3)
             cp      255
             jp      z,exit_close
+            ld      bc,NET_TIMEOUT_FRAMES
 wait_connect:
+            push    bc
+            call    mc_wait_flyback
+            pop     bc
             ld      a,(ix)          ; get socket status  (0 ==IDLE (OK), 1 == connect in progress, 2 == send in progress)
             cp      1               ; connect in progress?
-            jr      z,wait_connect
+            jr      nz,.connect_finished
+            dec     bc
+            ld      a,b
+            or      c
+            jr      nz,wait_connect
+            ld      hl,msgtimeout
+            call    disptextz
+            jp      exit_close
+.connect_finished:
             cp      0
             jr      z,connect_ok
             call    disp_error  
